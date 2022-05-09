@@ -69,7 +69,7 @@ body{
 .turn1::after{
     transform-origin: left;
 }
-.player:hover::after{
+.active-turn::after{
     transform: scalex(1);
 }
 
