@@ -11,32 +11,76 @@
 </head>
 
 <body>
-    <div class="scoreboard">
-        <div class="player turn0">
-            <div class="tag">Player 1</div>
-            <section class="counter">0</section>
-        </div>
-    
-        <div class="board-container">
-            <div class="board-position" data-positionX="0" data-positionY="0"></div>
-            <div class="board-position" data-positionX="0" data-positionY="1"></div>
-            <div class="board-position" data-positionX="0" data-positionY="2"></div>
-    
-            <div class="board-position" data-positionX="1" data-positionY="0"></div>
-            <div class="board-position" data-positionX="1" data-positionY="1"></div>
-            <div class="board-position" data-positionX="1" data-positionY="2"></div>
-    
-            <div class="board-position" data-positionX="2" data-positionY="0"></div>
-            <div class="board-position" data-positionX="2" data-positionY="1"></div>
-            <div class="board-position" data-positionX="2" data-positionY="2"></div>
-        </div>
-    
-        <div class="player turn1">
-            <div class="tag">Player 2</div>
-            <section class="counter">0</section>
+    <div class="selection-menu">
+        <section>
+            <header>TIC TAC TOE</header>
+        </section>
+
+        <form action="" id="form">
+            <section class="player-selection">
+                <div class="left-side">
+                    <ul>
+                        <li><input type="text" placeholder="Player" class="left-side-text" name="player1Name"></li>
+                        <li>                            
+                            <input type="radio" name="player1-type" id="left-side-player" value="player" checked>
+                            <label for="left-side-player">Player</label>
+                        
+                            <input type="radio" name="player1-type" id="left-side-cpu" value="cpu">
+                            <label for="left-side-cpu">CPU</label>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="right-side">
+                    <ul>
+                        <li><input type="text" placeholder="Player" class="right-side-text" name="player2Name"></li>
+                        <li>   
+                            <input type="radio" name="player2-type" id="right-side-player" value="player" checked>
+                            <label for="right-side-player">Player</label>
+
+                            <input type="radio" name="player2-type" id="right-side-cpu" value="cpu">
+                            <label for="right-side-cpu">CPU</label>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </form>
+
+
+        <section>
+            <button form="form">Start Game</button>
+        </section>
+    </div>
+    <div class="main-container">
+        <header>TIC TAC TOE</header>
+        <div class="scoreboard">
+            <div class="player turn0">
+                <div class="tag1">Player 1</div>
+                <section class="counter">0</section>
+            </div>
+
+            <div class="board-container">
+                <div class="board-position" data-positionX="0" data-positionY="0"></div>
+                <div class="board-position" data-positionX="0" data-positionY="1"></div>
+                <div class="board-position" data-positionX="0" data-positionY="2"></div>
+
+                <div class="board-position" data-positionX="1" data-positionY="0"></div>
+                <div class="board-position" data-positionX="1" data-positionY="1"></div>
+                <div class="board-position" data-positionX="1" data-positionY="2"></div>
+
+                <div class="board-position" data-positionX="2" data-positionY="0"></div>
+                <div class="board-position" data-positionX="2" data-positionY="1"></div>
+                <div class="board-position" data-positionX="2" data-positionY="2"></div>
+            </div>
+
+            <div class="player turn1">
+                <div class="tag2">Player 2</div>
+                <section class="counter">0</section>
+            </div>
         </div>
     </div>
-    
+
+
 </body>
 
 </html>
