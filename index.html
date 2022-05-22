@@ -21,10 +21,10 @@
                 <div class="left-side">
                     <ul>
                         <li><input type="text" placeholder="Player" class="left-side-text" name="player1Name"></li>
-                        <li>                            
+                        <li>
                             <input type="radio" name="player1-type" id="left-side-player" value="player" checked>
                             <label for="left-side-player">Player</label>
-                        
+
                             <input type="radio" name="player1-type" id="left-side-cpu" value="cpu">
                             <label for="left-side-cpu">CPU</label>
                         </li>
@@ -34,7 +34,7 @@
                 <div class="right-side">
                     <ul>
                         <li><input type="text" placeholder="Player" class="right-side-text" name="player2Name"></li>
-                        <li>   
+                        <li>
                             <input type="radio" name="player2-type" id="right-side-player" value="player" checked>
                             <label for="right-side-player">Player</label>
 
@@ -52,7 +52,12 @@
         </section>
     </div>
     <div class="main-container">
-        <header>TIC TAC TOE</header>
+        <header>TIC TAC TOE
+            <span class="returnBtn">
+                <svg class="btnR" style="width:34px;height:34px" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M19,7V11H5.83L9.41,7.41L8,6L2,12L8,18L9.41,16.58L5.83,13H21V7H19Z" />
+                </svg></span>
+        </header>
         <div class="scoreboard">
             <div class="player turn0">
                 <div class="tag1">Player 1</div>

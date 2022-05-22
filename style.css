@@ -76,6 +76,17 @@ body{
     font-weight: 600;
     white-space: nowrap;
 }
+.returnBtn{
+    position: absolute;
+    left: -50px;
+    padding: 5px;
+}
+.returnBtn>:hover{
+    cursor: pointer;   
+    transition: 200ms;
+    color: #ff8e3c;
+    transform: scale(1.1);
+}
 .player::after{
     content: '';
     position: absolute;
@@ -93,6 +104,7 @@ header{
     color: #2a2a2a;
     font-weight: 900;
     white-space: nowrap;
+    position: relative;
 }
 .turn1::after{
     transform-origin: left;

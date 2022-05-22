@@ -345,8 +345,8 @@ const displayController = (() => {
     }
 
     const _renderGame = (name1, name2) => {
-        document.querySelector('.main-container').classList.add('renderGame')
-        document.querySelector('.selection-menu').classList.add('renderMenu')
+        document.querySelector('.main-container').classList.toggle('renderGame')
+        document.querySelector('.selection-menu').classList.toggle('renderMenu')
     }
 
     const renderMenu = () => {
@@ -375,6 +375,7 @@ const displayController = (() => {
             document.querySelector('.right-side-text').value = '';
         })
 
+        document.querySelector('.btnR').addEventListener('click', _renderGame)
         const form = document.querySelector('#form')
         form.addEventListener('submit', (event) => {
             event.preventDefault()
