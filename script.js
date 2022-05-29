@@ -2,6 +2,7 @@
 
 const match = (() => {
     let _mode;
+    let aiPlay
     const playRound = (event) => {
         if (_mode == 'pvp') {
             if (gameboard.addNewMove(players[getTurn()], event.target.dataset.positionx, event.target.dataset.positiony, event)) {
@@ -45,7 +46,7 @@ const match = (() => {
             }
         }
         else{
-            setInterval(()=>{
+            aiPlay = setInterval(()=>{
                 setTimeout(() => {
                     players[0].aiTurn(players[0])
                 }, 300)
@@ -66,6 +67,7 @@ const match = (() => {
     }
 
     const setMode = (p1, p2) => {
+        clearInterval(aiPlay)
         if (p1 == 'player' && p2 == 'player') {
             _mode = 'pvp'
         }
@@ -86,7 +88,9 @@ const match = (() => {
             _mode = 'eve'
             playRound()
         }
+        displayController.resetCounter()
         gameboard.clearBoard()
+        restartTurn()
         displayController.animateTurn()
         displayController.updateBoard()
     }
@@ -104,17 +108,21 @@ const match = (() => {
         _turn = 0;
     }
 
-    let players = []
+    let players;
+    
 
     const savePlayers = (formPlayers) => {
+        players = [];
+        
         console.log(formPlayers)
-
-        let player1, player2;
+        let player1 = null, player2 = null;
+        
 
         if (formPlayers['player1-type'] == 'player') {
             //Saving player 1 name and sign and updating displayed names
             if (!formPlayers['player1Name']) {
                 player1 = Player('Player 1', 'X')
+                displayController.updateNames('Player 1', 1)
             }
             else {
                 player1 = Player(formPlayers['player1Name'], 'X')
@@ -131,6 +139,7 @@ const match = (() => {
             //Saving player 2 name and sign and updating displayed names
             if (!formPlayers['player2Name']) {
                 player2 = Player('Player 2', '0')
+                displayController.updateNames('Player 2', 2)
             }
             else {
                 player2 = Player(formPlayers['player2Name'], '0')
@@ -315,6 +324,12 @@ const displayController = (() => {
 
         document.querySelector(`.turn${match.getTurn()}`).classList.add('active-turn')
     }
+    const resetCounter = ()=>{
+        const counter = document.querySelectorAll('.counter')
+        counter.forEach((item)=>{
+            item.textContent = 0;
+        })
+    }
     const animateMove = (sign, row, column) => {
         let tile = document.createElement('div')
         tile.textContent = sign
@@ -387,7 +402,7 @@ const displayController = (() => {
 
     }
 
-    return { updateBoard, animateMove, animateWin, animateTurn, renderMenu, updateNames }
+    return { updateBoard, animateMove, animateWin, animateTurn, renderMenu, updateNames, resetCounter }
 })();
 
 //Factory function for players
