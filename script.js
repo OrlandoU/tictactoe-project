@@ -344,6 +344,7 @@ const displayController = (() => {
         }
         else {
             let audio = new Audio('./assets/p2.wav')
+            audio.play()
         }
 
     }
